@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Marketplace</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="gradient-bg">
+
+<div class="layout">
+
+<div class="sidebar">
+    <h2>Marketplace</h2>
+    <button class="btn primary" onclick="openModal()">+ Add Item</button>
+    <button class="btn ghost" onclick="go('profile.html')">Profile</button>
+    <button class="btn ghost" onclick="go('admin.html')">Admin</button>
+</div>
+
+<div class="main">
+
+<div class="top">
+    <input id="search" placeholder="Search..." onkeyup="filterItems()">
+
+    <!-- Price Filter -->
+    <input type="range" min="0" max="10000" id="priceRange" oninput="filterItems()">
+    <span id="priceValue">Any</span>
+</div>
+
+<div id="items" class="grid"></div>
+
+</div>
+
+<div id="modal" class="modal hidden">
+        <div class="box">
+            
+            <h2>Add Product</h2>
+
+        <input id="product_name" placeholder="Product Name">
+        <input id="product_desc" placeholder="Description">
+
+        <input id="product_price" type="number" placeholder="Price">
+        <input id="product_qty" type="number" placeholder="Quantity">
+
+        <input id="product_image" placeholder="Image URL">
+
+        <select id="category_id">
+            <option value="">Select Category</option>
+            <option value="1">Books</option>
+            <option value="2">Electronics</option>
+            <option value="3">Stationery</option>
+            <option value="4">Clothing</option>
+            <option value="5">Accessories</option>
+            <option value="6">Sports Items</option>
+            <option value="7">Others</option>
+        </select>
+
+    <button class="btn primary" onclick="addProduct()">Add Product</button>
+    <button class="btn ghost" onclick="closeModal()">Cancel</button>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+<button class="floating btn primary" onclick="openModal()">+</button>
+</body>
+</html>

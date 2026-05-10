@@ -1,0 +1,398 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #333;
+}
+
+/* Layout */
+.layout {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(15px);
+    color: white;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+}
+
+.sidebar button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    transition: 0.3s;
+}
+
+.sidebar button:hover {
+    background: #fff;
+    color: #333;
+}
+
+/* Animated Gradient Background */
+.gradient-bg {
+    background: linear-gradient(-45deg, #667eea, #764ba2, #00c6ff, #0072ff);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    height: 100vh;
+}
+
+/* Animation */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Main */
+.main {
+    flex: 1;
+    padding: 25px;
+    position: relative; /* IMPORTANT */
+}
+
+/* Modal inside main */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0,0,0,0.7);
+}
+
+.qty-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.qty-box button {
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    border: none;
+    background: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.qty-box input {
+    width: 60px;
+    text-align: center;
+}
+
+/* hide system */
+.hidden {
+    display: none;
+}
+
+/* Top bar */
+.top {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+input, select {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px,1fr));
+    gap: 20px;
+}
+
+/* Card */
+.card {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    padding: 15px;
+    transition: 0.3s;
+    cursor: pointer;
+    color: white;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+/* Image */
+.card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Price */
+.price {
+    font-weight: bold;
+    color: #00ffcc;
+}
+
+/* Button */
+.btn {
+    padding: 12px 18px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow effect */
+.btn::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(255,255,255,0.3);
+    transition: 0.4s;
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+/* Variants */
+.primary {
+    background: linear-gradient(45deg, #00ffcc, #00c3ff);
+    color: black;
+}
+
+.primary:hover {
+    transform: translateY(-2px) scale(1.03);
+}
+
+.ghost {
+    background: rgba(255,255,255,0.2);
+    color: white;
+}
+
+.ghost:hover {
+    background: white;
+    color: black;
+}
+
+.danger {
+    background: linear-gradient(45deg, #ff4d4d, #ff0000);
+    color: white;
+}
+
+.danger:hover {
+    transform: scale(1.05);
+}
+
+/* Link style */
+.link {
+    color: #00ffcc;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Floating Add Button */
+.floating {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #00ffcc;
+    color: black;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+}
+
+/* Box */
+.box {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(15px);
+    padding: 45px 40px;
+    border-radius: 18px;
+    width: 380px;
+    max-width: 90%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    color: white;
+    text-align: center;
+}
+
+.box input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px auto;
+    display: block;
+    border-radius: 10px;
+    border: none;
+}
+
+.box h2 {
+    margin-bottom: 15px;
+}
+/* Chat */
+.chat {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 260px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.chat-header {
+    background: #667eea;
+    color: white;
+    padding: 10px;
+}
+
+#chatMessages {
+    height: 150px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+#chatMessages p {
+    background: #eee;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* TOP SECTION */
+.product-top {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap; /* prevents overflow */
+}
+
+/* IMAGE */
+.product-image img {
+    width: 300px;
+    max-width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* PRODUCT INFO */
+.product-info {
+    flex: 1;
+    min-width: 250px;
+    color: white;
+    margin-top: -25px;
+}
+
+/* ORDER BOX */
+.order-box {
+    margin-top: 20px;
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: 15px;
+}
+
+/* DESCRIPTION */
+.description {
+    color: white;
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+/* RIGHT SIDE */
+.product-side {
+    width: 280px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+/* SELLER BOX */
+.seller-box {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 25px;
+}
+
+/* CHAT */
+.chat {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* CHAT MESSAGES */
+#chatMessages {
+    height: 220px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+/* CHAT INPUT */
+.chat input {
+    width: 100%;
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    box-sizing: border-box;
+}
+
+
+/* Chrome, Edge, Safari */
+#order_qty::-webkit-inner-spin-button,
+#order_qty::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

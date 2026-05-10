@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Product Details</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="gradient-bg">
+
+<div class="layout">
+
+    <!-- LEFT SIDE (Product + Order) -->
+    <div class="main">
+
+        <div class="product-container">
+
+            <!-- TOP SECTION -->
+            <div class="product-top">
+
+                <!-- IMAGE -->
+                <div class="product-image">
+                    <img id="p_image" src="" />
+                </div>
+
+                <!-- INFO + ORDER -->
+                <div class="product-info">
+
+                    <h1 id="p_name">Product Name</h1>
+
+                    <h2 class="price" id="p_price">Rs 0</h2>
+
+                    <p>Available Qty: <span id="p_qty"></span></p>
+
+                    <!-- ORDER BOX -->
+                    <div class="order-box">
+
+                        <label>Quantity</label>
+                            <div class="qty-box">
+                            <button onclick="decQty('order_qty','p_price')">-</button>
+
+                            <input id="order_qty" type="number" value="1" min="1">
+
+                            <button onclick="incQty('order_qty','p_price')">+</button>
+                            </div>
+
+                        <button class="btn primary" onclick="placeOrder()">Place Order</button>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- DESCRIPTION -->
+            <div class="description">
+                <h3>Description</h3>
+                <p id="p_desc"></p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT SIDE (Chat + Seller Info) -->
+    <div class="product-side">
+
+        <!-- SELLER INFO -->
+        <div class="seller-box box">
+
+            <h3>Seller Info</h3>
+
+            <p><b>Name:</b> <span id="seller_name"></span></p>
+            <p><b>Phone:</b> <span id="seller_phone"></span></p>
+
+        </div>
+
+        <!-- CHAT BOX
+        <div class="chat box">
+
+            <div class="chat-header">
+                Chat
+            </div>
+
+            <div id="chatMessages"></div>
+
+            <input id="chatInput" placeholder="Message..." />
+            <button class="btn primary" onclick="sendMessage()">Send</button>
+
+        </div> -->
+
+    </div>
+
+</div>
+
+<div id="transaction_modal" class="modal hidden">
+
+    <div class="box">
+
+        <h2>Order Successful</h2>
+
+        <p id="transaction_product"></p>
+
+        <p id="transaction_orderId"></p>
+
+        <p id="transaction_total"></p>
+
+        <button class="btn primary"
+                onclick="confirmTransaction()">
+
+            Pay Now
+
+        </button>
+        <button class="btn ghost"
+               onclick="closeTransactionModal()">
+
+            Close
+
+        </button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

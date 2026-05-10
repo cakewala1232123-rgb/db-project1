@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profile</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="center gradient-bg">
+
+    
+   <button class="btn primary" onclick="editProfile()">Update Profile</button>
+
+<div class="layout">
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <div class="profile-container box">
+
+            <!-- TOP USER INFO -->
+            <div class="profile-top">
+
+                <img id="p_pfp" class="profile-pfp"
+                     src="https://via.placeholder.com/120">
+
+                <div class="profile-info">
+
+                    <h2 id="p_name">User Name</h2>
+                    <p id="p_email">Email</p>
+
+                    <p><b>Phone:</b> <span id="p_phone"></span></p>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <!-- STATS -->
+            <div class="profile-stats">
+
+                <div class="stat">
+                    <h3 id="p_balance">Rs 0</h3>
+                    <p>Wallet Balance</p>
+                </div>
+
+                <div class="stat">
+                    <h3 id="p_products">0</h3>
+                    <p>Products Listed</p>
+                </div>
+
+                <div class="stat">
+                    <h3 id="p_orders">0</h3>
+                    <p>Orders</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="box hidden" id="profileBox">
+    <h2>Profile</h2>
+
+    <p><input id="update_fname" placeholder="First Name"></p>
+    <p><input id="update_lname" placeholder="Last Name"></p>
+    <p><input id="update_phone" placeholder="Phone (03XXXXXXXXX)"></p>
+    <p><input id="update_pfp" placeholder="Profile Picture URL"></p>
+    <p><input id="add_wallet" placeholder="Add Money to Wallet"></p>
+
+   <button class="btn primary" onclick="updateProfile()">Update Profile</button>
+   <button class="btn ghost" onclick="go('dashboard.html')">← Back to Dashboard</button>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
