@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Marketplace</title>
-<link rel="stylesheet" href="style.css">
+    <title>Marketplace</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="gradient-bg">
@@ -13,27 +13,58 @@
     <h2>Marketplace</h2>
     <button class="btn primary" onclick="openModal()">+ Add Item</button>
     <button class="btn ghost" onclick="go('profile.html')">Profile</button>
-    <button class="btn ghost" onclick="go('admin.html')">Admin</button>
+    <button class="btn ghost" onclick="loadProducts()">Marketplace</button>
+    <button class="btn ghost" onclick="loadMyProducts()">My Products</button>
+    <button class="btn ghost" onclick="loadMyOrders()">My Orders</button>
+    <button class="btn ghost" onclick="go('chats.html')">Chats</button>
 </div>
 
 <div class="main">
 
 <div class="top">
-    <input id="search" placeholder="Search..." onkeyup="filterItems()">
+    <input id="filter_search" placeholder="Search..." oninput="reloadCurrentProductPage()">
 
-    <!-- Price Filter -->
-    <input type="range" min="0" max="10000" id="priceRange" oninput="filterItems()">
-    <span id="priceValue">Any</span>
+    <div class="price-filter">
+        <input 
+            type="range"
+            min="0"
+            max="99999"
+            value="99999"
+            id="filter_max_price"   
+            oninput="syncPriceInput(); reloadCurrentProductPage();"
+        >
+
+        <input
+            type="number"
+            min="0"
+            max="99999"
+            value="99999"
+            id="filter_max_price_input"
+            oninput="syncPriceSlider(); reloadCurrentProductPage();"
+        >
+    </div>
+
+    <select id="filter_category" onchange="reloadCurrentProductPage()">
+        <option value="">All Categories</option>
+        <option value="1">Books</option>
+        <option value="2">Electronics</option>
+        <option value="3">Stationery</option>
+        <option value="4">Clothing</option>
+        <option value="5">Accessories</option>
+        <option value="6">Sports Items</option>
+        <option value="7">Others</option>
+    </select>
 </div>
 
 <div id="items" class="grid"></div>
+</div>
 
 </div>
 
+<!-- Add Product Modal -->
 <div id="modal" class="modal hidden">
-        <div class="box">
-            
-            <h2>Add Product</h2>
+    <div class="box">
+        <h2>Add Product</h2>
 
         <input id="product_name" placeholder="Product Name">
         <input id="product_desc" placeholder="Description">
@@ -54,13 +85,14 @@
             <option value="7">Others</option>
         </select>
 
-    <button class="btn primary" onclick="addProduct()">Add Product</button>
-    <button class="btn ghost" onclick="closeModal()">Cancel</button>
+        <button class="btn primary" onclick="addProduct()">Add Product</button>
+        <button class="btn ghost" onclick="closeModal()">Cancel</button>
+    </div>
 </div>
 
-</div>
-
+<!-- Load script at END of body -->
 <script src="script.js"></script>
+
 <button class="floating btn primary" onclick="openModal()">+</button>
 </body>
 </html>
