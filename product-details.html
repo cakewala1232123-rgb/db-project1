@@ -29,7 +29,9 @@
 
                     <h2 class="price" id="p_price">Rs 0</h2>
 
-                    <p>Available Qty: <span id="p_qty"></span></p>
+                    <p>Quantity: <span id="p_qty"></span></p>
+
+                    <p id="order_status"></p>
 
                     <!-- ORDER BOX -->
                     <div class="order-box">
@@ -70,22 +72,10 @@
 
             <p><b>Name:</b> <span id="seller_name"></span></p>
             <p><b>Phone:</b> <span id="seller_phone"></span></p>
+            <div id="chat_button">  </div>
 
         </div>
 
-        <!-- CHAT BOX
-        <div class="chat box">
-
-            <div class="chat-header">
-                Chat
-            </div>
-
-            <div id="chatMessages"></div>
-
-            <input id="chatInput" placeholder="Message..." />
-            <button class="btn primary" onclick="sendMessage()">Send</button>
-
-        </div> -->
 
     </div>
 
@@ -107,12 +97,6 @@
                 onclick="confirmTransaction()">
 
             Pay Now
-
-        </button>
-        <button class="btn ghost"
-               onclick="closeTransactionModal()">
-
-            Close
 
         </button>
 
