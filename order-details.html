@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="gradient-bg">
+
+<div class="layout">
+    <div class="sidebar">
+        <h2>Marketplace</h2>
+        <button class="btn ghost" onclick="go('dashboard.html')">← Back</button>
+    </div>
+
+    <div class="main">
+        <div class="detail-card">
+            
+            <!-- Product Info -->
+            <div class="product-section">
+                <img id="p_image" src="https://via.placeholder.com/300" alt="Product" style="width:100%;max-width:300px;border-radius:8px;" />
+                
+                <h2 id="p_name">Loading...</h2>
+                <p id="p_price" style="color:#666;"></p>
+                <p id="p_qty"></p>
+                <p id="p_desc" style="margin:10px 0;"></p>
+                
+                <div style="margin:10px 0;padding:10px;background:#f5f5f5;border-radius:8px;">
+                    <p><strong>Seller:</strong> <span id="seller_name"></span></p>
+                    <p><strong>Phone:</strong> <span id="seller_phone"></span></p>
+                </div>
+            </div>
+
+            <!-- Order Info -->
+            <div class="order-section" style="margin:20px 0;padding:15px;background:#fff;border-radius:8px;border:1px solid #ddd;">
+                <h3 style="margin-bottom:10px;">📋 Order Details</h3>
+                <p><strong>Order ID:</strong> <span id="o_order_id"></span></p>
+                <p><strong>Order Date:</strong> <span id="o_date"></span></p>
+                <p><strong>Total Amount:</strong> <span id="o_total" style="font-weight:bold;"></span></p>
+            </div>
+
+            <!-- Transaction Info -->
+            <div class="transaction-section" style="margin:20px 0;padding:15px;background:#f9f9f9;border-radius:8px;border:1px solid #ddd;">
+                <h3 style="margin-bottom:10px;">💳 Transaction Details</h3>
+                <p><strong>Transaction ID:</strong> <span id="t_id"></span></p>
+                <p><strong>Transaction Date:</strong> <span id="t_date"></span></p>
+                <p><strong>Amount Paid:</strong> <span id="t_amount" style="font-weight:bold;"></span></p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
